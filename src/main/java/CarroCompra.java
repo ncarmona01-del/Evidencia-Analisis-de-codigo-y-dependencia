@@ -1,0 +1,39 @@
+public class CarroCompra {
+
+    private int[][] productos = new int[2][5];
+
+    public CarroCompra() {
+        // TODO - implement CarroCompra.CarroCompra
+        for ( int i=0; i<5; i++) {
+            productos [0][i] = 1;
+            productos [1][i] = 1000;
+        }
+    }
+
+    private int calcularTotal() {
+        // TODO - implement CarroCompra.calcularTotal
+        int total = 0 , subtotal = 0;
+        for ( int i=0; i<5; i++) {
+            total += subtotal(productos[0][i],productos[1][i]);
+        }
+        return total;
+    }
+
+    /**
+     *
+     * @param cant
+     * @param precio
+     */
+    private int subtotal(int cant, int precio) {
+        // TODO - implement CarroCompra.subtotal
+        Calculadora calc = new Calculadora(cant, precio);
+        return calc.multiplicar();
+    }
+
+    public void MostrarTotal() {
+        // TODO - implement CarroCompra.MostrarTotal
+        System.out.println("El total de la compra :"+ this.calcularTotal());
+    }
+
+}
+
